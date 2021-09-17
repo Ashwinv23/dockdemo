@@ -55,8 +55,8 @@ phases:
           if [ -f "$ADDONSFILE" ]; then
             tmp=$(mktemp)
             timestamp=$(date +%s)
-            aws s3 cp "$ADDONSFILE" "s3://stackset-cop-demo-infras-pipelinebuiltartifactbuc-fs38j3ix32or/manual/$timestamp/$workload.addons.stack.yml";
-            jq --arg a "https://stackset-cop-demo-infras-pipelinebuiltartifactbuc-fs38j3ix32or.s3.us-east-1.amazonaws.com/manual/$timestamp/$workload.addons.stack.yml" '.Parameters.AddonsTemplateURL = $a' ./infrastructure/$workload-test.params.json > "$tmp" && mv "$tmp" ./infrastructure/$workload-test.params.json
+            aws s3 cp "$ADDONSFILE" "s3://stackset-cop-demo-infras-pipelinebuiltartifactbuc-10u0udpxdhm6g/manual/$timestamp/$workload.addons.stack.yml";
+            jq --arg a "https://stackset-cop-demo-infras-pipelinebuiltartifactbuc-10u0udpxdhm6g.s3.us-west-2.amazonaws.com/manual/$timestamp/$workload.addons.stack.yml" '.Parameters.AddonsTemplateURL = $a' ./infrastructure/$workload-test.params.json > "$tmp" && mv "$tmp" ./infrastructure/$workload-test.params.json
           fi
         done;
       # Build images
